@@ -1,7 +1,21 @@
+import { getByPlaceholderText } from '@testing-library/dom';
 import React, { Component } from 'react';
 class Counter extends React.Component {
+    state ={
+        count : 0,
+    };
+
     render() { 
-        return <div>Hello</div>;
+        return (
+        <div>
+            <span className="badge badge-primary m-2">{this.formatCount()}</span>
+            <button className="btn btn-secondary btn-sm">Increment</button>
+        </div>);
+    }
+
+    formatCount(){
+        const {count} = this.state;
+        return count === 0 ? "Zero" : count;
     }
 }
  
