@@ -6,8 +6,14 @@ class Counter extends React.Component {
         tags  : ["tag1","tag2","tag3"]
     };
 
-    handleIncrement(){
-        console.log("reach handle Increment");
+    // constructor(){
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+
+    handleIncrement = product => {
+        console.log(product);
+        this.setState({count : this.state.count +1})
     }
 
     render() { 
@@ -15,7 +21,7 @@ class Counter extends React.Component {
         <div>
             <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <button
-             onClick={this.handleIncrement}
+             onClick={() => this.handleIncrement({id : 1})}
              className="btn btn-secondary btn-sm">Increment</button>
             <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
         </div>);

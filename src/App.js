@@ -1,10 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Counter from "./components/counter";
+import "font-awesome/css/font-awesome.css";
+import Movies from "./components/movies";
 
 function App() {
-  return <Counter />;
+  return (
+    <main className="container">
+      <Movies />
+    </main>
+  );
 }
 
 export default App;
