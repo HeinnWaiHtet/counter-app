@@ -1,10 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Counter from "./components/counter";
+import "font-awesome/css/font-awesome.css";
+import Counters from "./components/counters";
 
 function App() {
-  return <Counter />;
+  return (
+    <main className="container">
+      <Counters />
+    </main>
+  );
 }
 
 export default App;
