@@ -4,6 +4,7 @@ import "font-awesome/css/font-awesome.css";
 import React, { Component } from "react";
 import Navbar from "./components/navbar";
 import Counters from "./components/counters";
+import Movies from "./components/movies";
 class App extends React.Component {
   state = {
     counters: [
@@ -59,25 +60,32 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar
-          totalCount={
-            this.state.counters.filter((counter) => counter.value > 0).length
-          }
-          total={this.state.counters
-            .map((counter) => counter.value)
-            .reduce((prev, curr) => prev + curr, 0)}
-        />
-        <main className="container">
-          <Counters
-            counters={this.state.counters}
-            onDelete={this.handleDelete}
-            onReset={this.handleReset}
-            onIncrement={this.handleIncrement}
-            onDecrement={this.handleDecrement}
-          />
+        <main class="container">
+          <Movies />
         </main>
       </React.Fragment>
     );
+    // return (
+    //   <React.Fragment>
+    //     <Navbar
+    //       totalCount={
+    //         this.state.counters.filter((counter) => counter.value > 0).length
+    //       }
+    //       total={this.state.counters
+    //         .map((counter) => counter.value)
+    //         .reduce((prev, curr) => prev + curr, 0)}
+    //     />
+    //     <main className="container">
+    //       <Counters
+    //         counters={this.state.counters}
+    //         onDelete={this.handleDelete}
+    //         onReset={this.handleReset}
+    //         onIncrement={this.handleIncrement}
+    //         onDecrement={this.handleDecrement}
+    //       />
+    //     </main>
+    //   </React.Fragment>
+    // );
   }
 }
 

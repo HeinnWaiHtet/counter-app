@@ -6,6 +6,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: true,
   },
   {
     _id: "5b31abceab2",
@@ -14,6 +15,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab11",
@@ -22,6 +24,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab12",
@@ -30,6 +33,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab13",
@@ -38,6 +42,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab14",
@@ -46,6 +51,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab15",
@@ -54,6 +60,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab16",
@@ -62,6 +69,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab17",
@@ -70,6 +78,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab18",
@@ -78,6 +87,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
   {
     _id: "5b31abceab19",
@@ -86,6 +96,7 @@ const movies = [
     numberInStock: 5,
     dailyRentalRate: 2.5,
     publishDate: "2018-01-02",
+    liked: false,
   },
 ];
 
