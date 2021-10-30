@@ -60,7 +60,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <main class="container">
+        <main className="container">
           <Movies />
         </main>
       </React.Fragment>
