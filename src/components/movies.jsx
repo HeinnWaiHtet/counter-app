@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {getMovies} from '../services/fakeMovieServices'
-import Like from './common/like';
 import Pagination from './common/pagination';
 import { paginate } from './utils/paginate';
 import ListGroup from './common/listGroup';
@@ -55,17 +54,23 @@ class Movies extends React.Component {
         this.setState({sortColumn });
     }
 
-    render() { 
-        const {length : count} = this.state.movies;
+    getPageData = () =>{
         const {pageSize , currentPage, movies : movieLists, selectedGenere, sortColumn} = this.state;
-        if(count === 0)
-        return <p>There is no movies in the database.</p>
-
         const filteredMovies = selectedGenere && selectedGenere._id
-            ? movieLists.filter(movie => movie.genere._id == selectedGenere._id)
+            ? movieLists.filter(movie => movie.genere._id === selectedGenere._id)
             : movieLists; 
         const sortedList = _.orderBy(filteredMovies, [sortColumn.path], [sortColumn.order]);
         const movies = paginate(sortedList, currentPage, pageSize);
+        return {totalCount : filteredMovies.length, data : movies};
+    }
+
+    render() { 
+        const {length : count} = this.state.movies;
+        const {pageSize , currentPage, sortColumn} = this.state;
+        if(count === 0)
+        return <p>There is no movies in the database.</p>
+
+        const {totalCount, data:movies} = this.getPageData();
 
         return (
             <React.Fragment>
@@ -77,7 +82,7 @@ class Movies extends React.Component {
                           onItemSelect = {this.handleGenereSelect} />
                     </div>
                     <div className="col">
-                    <p>There are {filteredMovies.length} movies in the database.</p>
+                    <p>There are {totalCount} movies in the database.</p>
                         <MoviesTable 
                            movies = {movies}
                            sortColumn = {sortColumn}
@@ -86,7 +91,7 @@ class Movies extends React.Component {
                            onSort = {this.handleSorting} />
 
                         <Pagination
-                           itemsCount = {filteredMovies.length}
+                           itemsCount = {totalCount}
                            pageSize = {pageSize}
                            currentPage = {currentPage}
                            onPageChanged = {this.handlePageChanged} />
